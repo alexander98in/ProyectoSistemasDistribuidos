@@ -1,0 +1,14 @@
+module sop_corba {
+	interface GestionNotificacion{
+		struct hamburguesaNotificacionDTO{
+			char tipo;
+			long cantidadIngredientesExtra;
+		};
+		typedef sequence<hamburguesaNotificacionDTO>  ListHamburguesas;
+		struct notificacionDTO{
+			long numeroMesa;
+			ListHamburguesas listaHamburguesas;
+		};
+		boolean enviarNotificacionPedido(in notificacionDTO objNotificacion);
+	};
+};
